@@ -1,8 +1,20 @@
+import { useEffect } from 'react';
 import '../App.css'
 import ReCAPTCHA from "react-google-recaptcha";
 import { BiErrorCircle } from "react-icons/bi";
 
-const Notice = ({seletData}) => {
+const Notice = ({ seletData }) => {
+
+    useEffect(() => {
+        fetch('http://localhost:5000/getoprs')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [])
 
     function onChange(value) {
         console.log("Captcha value:", value);

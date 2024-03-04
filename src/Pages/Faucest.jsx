@@ -61,7 +61,7 @@ const Faucest = () => {
             onClose={handleMenuClose}
         >
             {
-                user ? <MenuItem onClick={() => logout()}>Log Out</MenuItem> : <MenuItem onClick={() => loginWithRedirect()}>Log In</MenuItem>
+                !user ? <MenuItem onClick={() => loginWithRedirect()}>Log In</MenuItem> : <MenuItem onClick={() => logout()}>Log Out</MenuItem>
 
             }
             <NavLink to='/faq'><MenuItem onClick={handleMenuClose}>FAQ</MenuItem></NavLink>
@@ -70,6 +70,7 @@ const Faucest = () => {
     );
 
     console.log(user);
+
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
@@ -132,6 +133,29 @@ const Faucest = () => {
 
     const onSubmit = (data) => setSeletData(data.select)
 
+    React.useEffect(() => {
+        const name = user?.name;
+        const email = user?.email;
+        const photo = user?.picture
+        
+        if (user) {
+            const userData = { name, email, photo }
+            fetch('http://localhost:5000/getoprs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    }, [user])
 
     return (
         <div>
