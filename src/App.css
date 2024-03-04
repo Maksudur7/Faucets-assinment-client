@@ -1,0 +1,31 @@
+.notic-height {
+  display: flex;
+  height: 80px;
+  background-color: #9b1fe9;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-color {
+  color: #9b1fe9;
+}
+
+.backgroud-color {
+  background-color: #eef2fe;
+}
+
+.nd2Color {
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+}
+.heigit{
+  margin-top: 10px;
+  height: 50px;
+}
+.picture{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
