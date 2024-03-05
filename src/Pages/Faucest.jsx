@@ -137,10 +137,11 @@ const Faucest = () => {
         const name = user?.name;
         const email = user?.email;
         const photo = user?.picture
+        const roll = 'user'
         
         if (user) {
-            const userData = { name, email, photo }
-            fetch('http://localhost:5000/getoprs', {
+            const userData = { name, email, photo, roll }
+            fetch('https://assinment-task-for-back-end-surver.vercel.app/getoprs', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

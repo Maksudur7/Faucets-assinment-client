@@ -29,3 +29,24 @@
   width: 50px;
   border-radius: 50%;
 }
+.lgPicture{
+  height: 200px;
+  width: 200px;
+  border-radius: 50px 10px 50px 10px;
+}
+.drawarer{
+  width: 300px;
+  
+}
+.paddingDiv{
+  padding: 20px;
+}
+.container{
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.container2{
+  margin-left: 200px;
+}

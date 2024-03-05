@@ -7,8 +7,12 @@ function App() {
 
   return (
     <>
-      <Faucest></Faucest>
-      <Outlet></Outlet>
+      <div className="container">
+        <div>
+          <Faucest></Faucest>
+          <Outlet></Outlet>
+        </div>
+      </div>
     </>
   )
 }
